@@ -16,9 +16,12 @@ def animal_sound(animal):
 
 my_dog = Dog()
 my_dog.speak()
+print(my_dog.speak())
 
 my_cat = Cat()
 my_cat.speak()
+print(my_cat.speak())
 
 animal_sound(my_dog)
 animal_sound(my_cat)
+print(f"{my_dog.speak()}, {my_cat.speak()}")
