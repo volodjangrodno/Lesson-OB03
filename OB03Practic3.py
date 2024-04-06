@@ -13,7 +13,10 @@ class Book:
         self.title = title
         self.author = author
 
+    def info_book(self):
+        print(f"Книга : {self.title}, Автор: {self.author.name}, Национальность автора: {self.author.nationality}")
+
 author = Author('J.K. Rowling', 'British')
 book = Book('Harry Potter', author)
 
-print(f"Книга : {book.title}, Автор: {book.author.name}, Национальность автора: {book.author.nationality}")
+book.info_book()
