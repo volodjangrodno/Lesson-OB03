@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="427c2947-60c7-4f09-bb7c-701ce36fae9b" name="Changes" comment="new code in OB03Practic3.py">
-      <change afterPath="$PROJECT_DIR$/OB03dz1.py" afterDir="false" />
+    <list default="true" id="427c2947-60c7-4f09-bb7c-701ce36fae9b" name="Changes" comment="new code in OB03dz1.py.py">
+      <change afterPath="$PROJECT_DIR$/animals.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OB03Practic3.py" beforeDir="false" afterPath="$PROJECT_DIR$/OB03Practic3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OB03dz1.py" beforeDir="false" afterPath="$PROJECT_DIR$/OB03dz1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,14 +234,31 @@
       <option name="project" value="LOCAL" />
       <updated>1712439195039</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new code in OB03dz1.py.py">
+      <option name="closed" value="true" />
+      <created>1712447342950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712447342950</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new code in OB03dz1.py.py">
+      <option name="closed" value="true" />
+      <created>1712447405879</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712447405879</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new cod in OB03Practic1.py" />
     <MESSAGE value="new code in OB03Practic2.py" />
     <MESSAGE value="new code in OB03Practic3.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="new code in OB03Practic3.py" />
+    <MESSAGE value="new code in OB03dz1.py.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="new code in OB03dz1.py.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

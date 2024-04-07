@@ -21,6 +21,8 @@
 # такие как сохранение информации о зоопарке в файл и возможность её загрузки,
 # чтобы у вашего зоопарка было "постоянное состояние" между запусками программы.
 
+import pickle
+
 class Animal:
     def __init__(self, name, age):
         self.name = name
@@ -53,7 +55,7 @@ class Mammal(Animal):
 
 class Reptile(Animal):
     def make_sound(self):
-        return 'Рептилии издают звуки - Клац-клац'
+        return 'Рептилии издают звуки - Клац-клац, Пшшшшш-пссссссс'
 
     def eat(self, food="мясо"):
 
@@ -62,6 +64,8 @@ class Reptile(Animal):
 def animal_sound(animals):
     for animal in animals:
         animal.make_sound()
+
+
 
 
 class Zoo:
@@ -77,24 +81,65 @@ class Zoo:
         self.animals.remove(animal)
         print(f"Животное {animal.name} удалено из зоопарка")
 
+
+
     def add_employee(self, employee):
         self.employees.append(employee)
-        print(f"Сотрудник добавлен в зоопарк")
+        print(f"Сотрудник {employee.name} добавлен в зоопарк")
 
     def remove_employee(self, employee):
         self.employees.remove(employee)
-        print(f"Сотрудник удален из зоопарка")
+        print(f"Сотрудник {employee.name} удален из зоопарка")
+
+    def save_animals_to_file(self, filename):
+        with open(filename, "animals.txt") as file:
+            for animal in self.animals:
+                file.write(f"{animal.name}, {animal.age}, {animal.make_sound()}, {animal.eat()}\n")
+
+    def save_employees_to_file(self, filename):
+        with open(filename, "employees.txt") as file:
+            for employee in self.employees:
+                file.write(f"{employee.name}, {employee.position}\n")
+
+    def load_animals_from_file(self, filename):
+        with open(filename, "animals.txt") as file:
+            for line in file:
+                name, age, sound, eat = line.strip().split(',')
+                if sound == 'Птицы издают звуки - Чик-чирик, Кря-кря, Курлык-курлык':
+                    animal = Bird(name, age)
+                elif sound == 'Кошачьи издают звуки - Мур-Мяу':
+                    animal = Mammal(name, age)
+                elif sound == 'Рептилии издают звуки - Клац-клац, Пшшшшш-пссссссс':
+                    animal = Reptile(name, age)
+                animal.make_sound = sound
+                animal.eat = eat
+                self.add_animal(animal)
+
+    def load_employees_from_file(self, filename):
+        with open(filename, "employees.txt") as file:
+            for line in file:
+                name, position = line.strip().split(',')
+                employee = ZooKeeper(name, position)
+                self.add_employee(employee)
 
 
 class ZooKeeper(Zoo):
+    def __init__(self, name, position):
+        super().__init__()
+        self.name = name
+        self.position = position
     def feed_animal(self, animal):
-        print(f"Животное {animal.name} покормлено сотрудником")
+        print(f"{self.position} {self.name} покормил животное {animal.name}")
 
 
 class Veterinarian(Zoo):
+    def __init__(self, name, position):
+        super().__init__()
+        self.name = name
+        self.position = position
     def heal_animal(self, animal):
 
-        print(f"Животное {animal.name} вылечено ветеринаром")
+        print(f"{self.position} {self.name} вылечил животное {animal.name}")
 
 animals = [Reptile("Крокодил Гена", 25), Bird("Попугай Гоша", 2), Mammal("Пантера Багира", 5)]
 
@@ -107,8 +152,8 @@ mammal2 = Mammal("Котофей Матроскин", 3)
 reptile2 = Reptile("Удав Каа", 25)
 
 zoo = Zoo()
-keeper1 = ZooKeeper()
-veterinarian1 = Veterinarian()
+keeper1 = ZooKeeper("Василий Пупкин", "Охранник")
+veterinarian1 = Veterinarian("Айболит", "Ветеринар")
 
 zoo.add_animal(bird2)
 zoo.add_animal(mammal2)
@@ -122,3 +167,8 @@ veterinarian1.heal_animal(mammal2)
 
 animal_sound(zoo.animals)
 
+zoo.save_animals_to_file('animals.txt')
+zoo.save_employees_to_file('employees.txt')
+
+zoo.load_animals_from_file('animals.txt')
+zoo.load_employees_from_file('employees.txt')
