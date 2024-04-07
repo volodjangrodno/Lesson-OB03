@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="427c2947-60c7-4f09-bb7c-701ce36fae9b" name="Changes" comment="new code in OB03dz1.py.py">
-      <change afterPath="$PROJECT_DIR$/animals.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/employees.txt" afterDir="false" />
+    <list default="true" id="427c2947-60c7-4f09-bb7c-701ce36fae9b" name="Changes" comment="new code2 in OB03dz1.py.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OB03dz1.py" beforeDir="false" afterPath="$PROJECT_DIR$/OB03dz1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/animals.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employees.txt" beforeDir="false" afterPath="$PROJECT_DIR$/employees.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,23 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python.OB03Klass1.executor": "Run",
-    "Python.OB03Klass2.executor": "Run",
-    "Python.OB03Klass3.executor": "Run",
-    "Python.OB03Practic1.executor": "Run",
-    "Python.OB03Practic2.executor": "Run",
-    "Python.OB03Practic3.executor": "Run",
-    "Python.OB03dz1.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/Нейросети/Python + ChatGPT/PythonProjects/Lesson OB03"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.OB03Klass1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OB03Klass2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OB03Klass3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OB03Practic1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OB03Practic2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OB03Practic3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OB03dz1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Нейросети/Python + ChatGPT/PythonProjects/Lesson OB03&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.OB03dz1">
     <configuration name="OB03Klass3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lesson OB03" />
@@ -250,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712447405879</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new code2 in OB03dz1.py.py">
+      <option name="closed" value="true" />
+      <created>1712498144109</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712498144110</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -258,7 +266,8 @@
     <MESSAGE value="new code in OB03Practic2.py" />
     <MESSAGE value="new code in OB03Practic3.py" />
     <MESSAGE value="new code in OB03dz1.py.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="new code in OB03dz1.py.py" />
+    <MESSAGE value="new code2 in OB03dz1.py.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="new code2 in OB03dz1.py.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

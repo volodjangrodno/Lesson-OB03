@@ -92,36 +92,76 @@ class Zoo:
         print(f"Сотрудник {employee.name} удален из зоопарка")
 
     def save_animals_to_file(self, filename):
-        with open(filename, "animals.txt") as file:
+        existing_animals = set()
+        try:
+            with open(filename, "r") as file:
+                for line in file:
+                    existing_animals.add(line.strip())
+        except FileNotFoundError:
+            pass  # Файл еще не существует, продолжаем без ошибки
+
+        with open(filename, "a") as file:
             for animal in self.animals:
-                file.write(f"{animal.name}, {animal.age}, {animal.make_sound()}, {animal.eat()}\n")
+                animal_info = f"{animal.name}, {animal.age}, {animal.make_sound()}, {animal.eat()}\n"
+                if animal_info.strip() not in existing_animals:
+                    file.write(animal_info)
+
 
     def save_employees_to_file(self, filename):
-        with open(filename, "employees.txt") as file:
+        existing_employees = set()
+        try:
+            with open(filename, "r") as file:
+                for line in file:
+                    existing_employees.add(line.strip())
+        except FileNotFoundError:
+            pass  # Файл еще не существует, продолжаем без ошибки
+
+        with open(filename, "a") as file:
             for employee in self.employees:
-                file.write(f"{employee.name}, {employee.position}\n")
+                employee_info = f"{employee.name}, {employee.position}\n"
+                if employee_info.strip() not in existing_employees:
+                    file.write(employee_info)
 
     def load_animals_from_file(self, filename):
-        with open(filename, "animals.txt") as file:
-            for line in file:
-                name, age, sound, eat = line.strip().split(',')
-                if sound == 'Птицы издают звуки - Чик-чирик, Кря-кря, Курлык-курлык':
-                    animal = Bird(name, age)
-                elif sound == 'Кошачьи издают звуки - Мур-Мяу':
-                    animal = Mammal(name, age)
-                elif sound == 'Рептилии издают звуки - Клац-клац, Пшшшшш-пссссссс':
-                    animal = Reptile(name, age)
-                animal.make_sound = sound
-                animal.eat = eat
-                self.add_animal(animal)
+        try:
+            with open(filename, "r") as file:
+                for line in file:
+                    parts = line.strip().split(', ', maxsplit=3)  # Разделяем строку на 4 части
+                    if len(parts) == 4:
+                        name, age, sound, eat = parts
+
+                        if 'Птицы издают звуки' in sound:
+                            animal = Bird(name, age, sound, eat)
+                        elif 'Кошачьи издают звуки' in sound:
+                            animal = Mammal(name, age, sound, eat)
+                        elif 'Рептилии издают звуки' in sound:
+                            animal = Reptile(name, age, sound, eat)
+                        else:
+                            print(f"Неизвестный тип животного в строке: {line}")
+                            continue
+
+                        self.add_animal(animal)
+                        print(f"Животное {name} выгружено из файла")
+        except FileNotFoundError:
+            print(f"Файл {filename} не найден.")
+        except Exception as e:
+            print(f"Произошла ошибка при загрузке данных из {filename}: {e}")
 
     def load_employees_from_file(self, filename):
-        with open(filename, "employees.txt") as file:
-            for line in file:
-                name, position = line.strip().split(',')
-                employee = ZooKeeper(name, position)
-                self.add_employee(employee)
-
+        try:
+            with open(filename, "r") as file:
+                for line in file:
+                    try:
+                        name, position = line.strip().split(', ')
+                        employee = ZooKeeper(name, position)
+                        self.add_employee(employee)
+                        print(f"Сотрудник {name} выгружен из файла")
+                    except ValueError:
+                        print(f"Ошибка формата данных в строке: {line}")
+        except FileNotFoundError:
+            print(f"Файл {filename} не найден.")
+        except Exception as e:
+            print(f"Произошла ошибка при загрузке данных из {filename}: {e}")
 
 class ZooKeeper(Zoo):
     def __init__(self, name, position):
